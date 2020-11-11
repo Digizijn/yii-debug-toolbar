@@ -330,7 +330,9 @@ class YiiDebugToolbarPanelSql extends YiiDebugToolbarPanel
         }
 
         $entries = array_values($results);
-        $func    = create_function('$a,$b','return $a[4]<$b[4]?1:0;');
+        $func    = function($a,$b){
+        	return $a[4]<$b[4]?1:0;
+		};
 
         usort($entries, $func);
 

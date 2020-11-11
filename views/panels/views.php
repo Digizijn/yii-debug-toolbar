@@ -97,7 +97,7 @@ $index = 1;
                                     <td><?php echo $this->getFilePath($item['sourceFile']) ?></td>
                                 </tr>
                         
-                                <?php if(!(1===count($item['data']) && isset($item['data']['content']))): ?>
+                                <?php if(!(is_array($item['data']) && 1===count($item['data']) && isset($item['data']['content']))): ?>
                                 <tr>
                                     <th>View data</th>
                                     <td>
